@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import { motion } from 'motion/react';
 import { Target, Eye, Users, Zap, Shield, Globe } from 'lucide-react';
@@ -14,7 +14,7 @@ export default function About() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <span className="inline-block px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-6">
+          <span className="inline-block px-3 py-1 rounded-full bg-accent/5 border border-accent/10 text-[10px] font-bold uppercase tracking-[0.2em] text-accent mb-6">
             Our Journey
           </span>
           <h1 className="text-5xl md:text-7xl font-semibold tracking-tight text-primary leading-[1.1] mb-8">
@@ -48,11 +48,11 @@ export default function About() {
           
           <div className="mt-10 flex gap-12">
             <div>
-              <div className="text-3xl font-bold text-primary mb-1 tracking-tighter">10k+</div>
+              <div className="text-3xl font-bold text-accent mb-1 tracking-tighter">10k+</div>
               <div className="text-xs uppercase tracking-widest text-gray-400 font-bold">Reports Handled</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary mb-1 tracking-tighter">98%</div>
+              <div className="text-3xl font-bold text-accent mb-1 tracking-tighter">98%</div>
               <div className="text-xs uppercase tracking-widest text-gray-400 font-bold">Fast Response</div>
             </div>
           </div>
@@ -112,7 +112,7 @@ export default function About() {
       <section className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold text-primary uppercase tracking-tight">Nilai Inti Kami</h2>
-          <div className="w-12 h-1 bg-primary mx-auto mt-4" />
+          <div className="w-12 h-1 bg-accent mx-auto mt-4" />
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -139,9 +139,9 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               key={i}
-              className="bg-white p-10 hover:border-primary/40 transition-all duration-500 group text-center"
+              className="panel p-10 hover:border-accent/40 transition-all duration-500 group text-center"
             >
-              <div className="w-14 h-14 bg-surface border border-border rounded-2xl flex items-center justify-center text-primary mb-6 mx-auto group-hover:scale-110 transition-transform shadow-sm">
+              <div className="w-14 h-14 bg-surface border border-border rounded-2xl flex items-center justify-center text-accent mb-6 mx-auto group-hover:scale-110 transition-transform shadow-sm">
                 {item.icon}
               </div>
               <h4 className="text-xl font-bold mb-3 text-primary tracking-tight">{item.title}</h4>

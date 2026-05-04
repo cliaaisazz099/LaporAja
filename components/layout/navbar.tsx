@@ -17,7 +17,6 @@ export default function Navbar() {
     const [isOpen, setOpen] = useState(false);
     const pathname = usePathname();
     const isActive = (href: string) => {
-        // biar "/" gak bentrok dengan semua route
         if (href === "/") return pathname === "/";
         return pathname.startsWith(href);
     };
