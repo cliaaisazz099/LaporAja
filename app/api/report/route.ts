@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/superbase";
+import { supabase } from "@/lib/supabase";
 
 const MAX_FILES = 5;
 const ALLOWED_TYPES = ["image/jpeg", "image/png", "image/webp"];

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import StatusBadge from "@/components/StatusBadge";
+import StatusBadge from "@/components/ui/StatusBadge";
 
 type Report = {
   status: "pending" | "process" | "done";
@@ -118,7 +118,7 @@ export default function ReportsPage() {
             {filtered.map((report) => (
               <Link
                 key={report.id}
-                href={`/report/${report.id}`}
+                href={`/reports/${report.id}`}
                 className="group"
               >
                 <div className="flex items-center justify-between bg-white border border-primary rounded-2xl px-6 py-5 hover:shadow-md hover:border-slate-300 transition-all duration-200">

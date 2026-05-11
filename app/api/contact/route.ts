@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/superbase";
+import { supabase } from "@/lib/supabase";
 import { ContactPayload } from "@/lib/types";
 
 export async function POST(req: Request) {

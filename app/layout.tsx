@@ -1,30 +1,28 @@
-import "./globals.css";
-import { Toaster } from "sonner";
+import './globals.css';
 
-import Navbar from "@/components/layout/navbar";
-import Footer from "@/components/layout/footer";
+import { Toaster } from 'sonner';
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="id">
-      <body className="bg-slate-50 text-slate-900">
-        <Navbar />
+      <body suppressHydrationWarning className="bg-slate-50 text-slate-900">
         {children}
+
         <Toaster
           position="top-right"
+          richColors
           toastOptions={{
             style: {
-              borderRadius: "12px",
-              padding: "12px 16px",
-              fontSize: "14px",
+              borderRadius: '16px',
+              padding: '16px',
+              fontSize: '14px',
             },
           }}
         />
-        <Footer />
       </body>
     </html>
   );

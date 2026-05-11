@@ -58,7 +58,7 @@ export default function LatestReports() {
             {reports.map((report) => (
               <Link
                 key={report.id}
-                href={`/report/${report.id}`}
+                href={`/reports/${report.id}`}
                 className="group"
               >
                 <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 h-full hover:bg-white hover:shadow-xl hover:-translate-y-2 transition-all duration-300">

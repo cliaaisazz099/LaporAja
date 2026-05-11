@@ -10,7 +10,7 @@ import {
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import L from "leaflet";
-import { reverseGeocode } from "@/lib/helper/geocode";
+import { reverseGeocode } from "@/lib/helpers/geocode";
 
 // ================= CONFIG =================
 const CENTER = { lat: -7.9528, lng: 112.61 };

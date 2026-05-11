@@ -2,7 +2,7 @@
 
 import { useEffect, useState, use } from "react";
 import dynamic from "next/dynamic";
-import StatusBadge from "@/components/StatusBadge";
+import StatusBadge from "@/components/ui/StatusBadge";
 
 const MapContainer = dynamic(
   () => import("react-leaflet").then((m) => m.MapContainer),
