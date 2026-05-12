@@ -1,8 +1,11 @@
 'use server';
 
-import { loginSchema, registerSchema } from '@/lib/validations/admin-auth';
+import {
+  loginSchema,
+  registerSchema,
+} from '@/lib/validations/admin-auth';
+
 import { createSupabaseServer } from '@/lib/server';
-import { supabase } from '@/lib/supabase';
 
 type FieldErrors = {
   email?: string[];
@@ -19,16 +22,19 @@ export async function loginAdmin(data: {
   if (!validated.success) {
     return {
       success: false,
-      errors: validated.error.flatten().fieldErrors as FieldErrors,
+      errors:
+        validated.error.flatten()
+          .fieldErrors as FieldErrors,
     };
   }
 
   const supabase = createSupabaseServer();
 
-  const { error } = await supabase.auth.signInWithPassword({
-    email: validated.data.email,
-    password: validated.data.password,
-  });
+  const { error } =
+    await supabase.auth.signInWithPassword({
+      email: validated.data.email,
+      password: validated.data.password,
+    });
 
   if (error) {
     return {
@@ -52,22 +58,43 @@ export async function registerAdmin(data: {
   if (!validated.success) {
     return {
       success: false,
-      errors: validated.error.flatten().fieldErrors as FieldErrors,
+      errors:
+        validated.error.flatten()
+          .fieldErrors as FieldErrors,
     };
   }
 
   const supabase = createSupabaseServer();
 
-  const { error } = await supabase.auth.signUp({
-    email: validated.data.email,
-    password: validated.data.password,
-    options: {
-      data: {
-        full_name: validated.data.fullName,
-        role: 'admin',
+  // cek email sudah ada atau belum
+  const { data: existingUsers } =
+    await supabase.auth.admin.listUsers();
+
+  const existingUser =
+    existingUsers.users.find(
+      (user) =>
+        user.email === validated.data.email
+    );
+
+  if (existingUser) {
+    return {
+      success: false,
+      message: 'Email sudah digunakan',
+    };
+  }
+
+  const { error } =
+    await supabase.auth.signUp({
+      email: validated.data.email,
+      password: validated.data.password,
+      options: {
+        data: {
+          full_name:
+            validated.data.fullName,
+          role: 'admin',
+        },
       },
-    },
-  });
+    });
 
   if (error) {
     return {
@@ -76,5 +103,7 @@ export async function registerAdmin(data: {
     };
   }
 
-  return { success: true };
+  return {
+    success: true,
+  };
 }
