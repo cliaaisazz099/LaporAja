@@ -3,7 +3,7 @@
 import { useState } from "react";
 import ReportModal from "../modal/ReportModal";
 
-const hero = () => {
+const Hero = () => {
 
     const [isOpen, setOpen] = useState(false);
 
@@ -59,4 +59,4 @@ const hero = () => {
     )
 }
 
-export default hero
+export default Hero

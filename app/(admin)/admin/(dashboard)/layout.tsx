@@ -1,6 +1,5 @@
 'use client';
 
-import { motion } from 'motion/react';
 import { 
   BarChart3, 
   FileText, 
@@ -17,7 +16,6 @@ import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 
 import { usePathname, useRouter } from 'next/navigation';
-import { supabase } from '@/lib/supabase';
 import { logoutAdmin } from '@/app/actions/auth/logout';
 
 interface AdminLayoutProps {

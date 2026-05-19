@@ -2,7 +2,6 @@
 
 import { motion } from 'motion/react';
 import { Megaphone, Camera, MapPin, ClipboardList, Image, Navigation, BarChart3, CheckSquare, Zap } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 export default function Services() {
   return (

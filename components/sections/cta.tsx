@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import ReportModal from "../modal/ReportModal"
 
-const cta = () => {
+const Cta = () => {
 
     const [isOpen, setOpen] = useState(false);
 
@@ -32,4 +32,4 @@ const cta = () => {
     )
 }
 
-export default cta
+export default Cta
